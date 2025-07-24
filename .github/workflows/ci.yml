@@ -53,4 +53,4 @@ jobs:
       - name: Push Helm chart
         run: |
           CHART_NAME=$(ls *.tgz | head -n 1)
-          helm push $CHART_NAME ${{github.repository_owner}}
+          helm push $CHART_NAME oci://ghcr.io/${{ github.repository_owner }}
