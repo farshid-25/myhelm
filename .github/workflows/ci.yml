@@ -42,10 +42,11 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: oci://ghcr.io
-          username: "farshid25"
+          username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Push Helm chart
         run: |
           CHART_NAME=$(ls *.tgz | head -n 1)
-          helm push $CHART_NAME oci://ghcr.io/${{ github.repository_owner }}
+          helm push $CHART_NAME oci://ghcr.io/farshid25
+        #   dollar{{ github.repository_owner }}
