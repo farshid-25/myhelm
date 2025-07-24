@@ -3,7 +3,7 @@ name: CI
 on: [push]
 
 permissions:
-  contents: write
+  contents: read
   packages: write
 
 jobs:
@@ -24,9 +24,9 @@ jobs:
     name: package chart
     needs: [lint]
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
+    # permissions:
+    #   contents: read
+    #   packages: write
 
     steps:
       - name: Checkout code
@@ -46,7 +46,8 @@ jobs:
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v1
         with:
-          registry: oci://ghcr.io
+          registry: ghcr.io
+          # oci://
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
