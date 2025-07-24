@@ -1,0 +1,48 @@
+name: CI
+
+on: [push]
+
+jobs:
+  lint:
+    name: Lint Code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Helm
+        uses: azure/setup-helm@v1
+
+      - name: Lint helm
+        run: helm lint
+
+  build:
+    permissions:
+      contents: read
+      packages: write
+    name: package chart
+    needs: [lint]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Helm
+        uses: azure/setup-helm@v3
+        with:
+          version: v3.14.0
+
+      - name: helm package
+        run: helm package .
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push Helm chart
+        run: |
+          CHART_NAME=$(ls *.tgz | head -n 1)
+          helm push $CHART_NAME oci://ghcr.io/${{ github.repository_owner }}

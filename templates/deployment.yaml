@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myhelm
+  labels:
+    kir: kos
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      kir: kos
+  template:
+    metadata:
+      labels:
+        kir: kos
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.internalPort }}
+              protocol: TCP

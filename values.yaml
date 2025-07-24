@@ -1,0 +1,10 @@
+replicaCount: 1
+
+image:
+  repository: docker.io/library/nginx:stable-perl
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  internalPort: 80
+  externalPort: 8080
