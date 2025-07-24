@@ -42,7 +42,7 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: oci://ghcr.io
-          username: ${{ github.actor}}
+          username: "farshid25"
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Push Helm chart
