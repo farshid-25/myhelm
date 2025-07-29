@@ -2,6 +2,7 @@ replicaCount: 1
 
 image:
   repository: docker.io/library/nginx
+  version: 1.28-alpine-perl
   pullPolicy: IfNotPresent
 
 service:
