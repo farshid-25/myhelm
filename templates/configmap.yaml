@@ -1,0 +1,16 @@
+---
+kind: ConfigMap
+metadata:
+  name: my-config
+apiVersion: v1
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Farshid</title>
+    </head>
+    <body>
+        <p>This is Deployment One! Hello from Kind!<p>
+    </body>
+    </html>

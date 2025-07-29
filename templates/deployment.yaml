@@ -22,3 +22,10 @@ spec:
             - name: http
               containerPort: {{ .Values.service.internalPort }}
               protocol: TCP
+          volumeMounts:
+            - name: nginx-config
+              mountPath: /usr/share/nginx/html #nginx specific
+      volumes:
+        - name: nginx-config
+          configMap:
+            name: my-config
