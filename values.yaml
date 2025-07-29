@@ -7,4 +7,4 @@ image:
 service:
   type: NodePort
   internalPort: 80
-  externalPort: 8081
+  externalPort: 8082
