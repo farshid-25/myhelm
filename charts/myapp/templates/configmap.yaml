@@ -4,7 +4,7 @@ metadata:
   name: my-config
 apiVersion: v1
 data:
-  index.html: |
+  index.html: | 
     <!DOCTYPE html>
     <html lang="en">
     <head>
