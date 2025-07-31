@@ -9,3 +9,8 @@ service:
   type: NodePort
   internalPort: 80
   externalPort: 8082
+
+# nodig of niet?
+external-secrets:
+  installCRDs: true
+  # andere configuratie
