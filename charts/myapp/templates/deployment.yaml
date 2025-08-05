@@ -34,4 +34,4 @@ spec:
             name: my-config
         - name: data-from-secret
           secret: 
-            name: private
+            secretName: private
