@@ -9,5 +9,3 @@ service:
   type: NodePort
   internalPort: 80
   externalPort: 8082
-  internalPort2: 80
-  externalPort2: 8083

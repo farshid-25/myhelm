@@ -11,9 +11,5 @@ spec:
       targetPort: {{ .Values.service.internalPort }}
       protocol: TCP
       name: http
-    - port: {{ .Values.service.externalPort }}
-      targetPort: {{ .Values.service.internalPort }}
-      protocol: TCP
-      name: http-2
   selector:
     kir: kos
