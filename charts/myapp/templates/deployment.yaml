@@ -22,21 +22,11 @@ spec:
             - name: http
               containerPort: {{ .Values.service.internalPort }}
               protocol: TCP
-          volumeMounts:  
-            - name: http
-              mountPath: /usr/share/nginx/http
-              readOnly: true
+          volumeMounts:
+              - name: index
+                readOnly: true
+                mountPath: "/usr/share/nginx/http"
       volumes:
-        - name: http
-          projected:
-            sources:
-              - secret:
-                  name: privatepage
-                  items:
-                    - key: private.html
-                      path: private.html
-              - configmap:
-                  name: my-config
-                  items:
-                    - key: index.html
-                      path: index.html
+        - name: index
+          secret:
+            secretName: privatepage
