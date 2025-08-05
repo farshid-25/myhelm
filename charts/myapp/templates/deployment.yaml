@@ -31,9 +31,9 @@ spec:
           projected:
             sources:
               - secret:
-                  name: private
+                  name: privatepage
                   items:
-                    - key: private
+                    - key: private.html
                       path: private.html
               - configmap:
                   name: my-config
