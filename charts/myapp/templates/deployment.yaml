@@ -24,8 +24,14 @@ spec:
               protocol: TCP
           volumeMounts:
             - name: nginx-config
-              mountPath: /usr/share/nginx/html #nginx specific.     ,,
+              mountPath: /usr/share/nginx/html #nginx specific. 
+            - name: http-2
+              mountPath: "/etc/http-2"
+
       volumes:
         - name: nginx-config
           configMap:
             name: my-config
+        - name: http-2
+          secret:
+            secretName: http-2
