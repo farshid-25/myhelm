@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kirkos22222
+  name: kabul-a
   namespace: argocd
 spec:
   destination:
-    namespace: default
+    namespace: team-a
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: helm-guestbook
-    repoURL: https://github.com/argoproj/argocd-example-apps.git
-    targetRevision: featdasdsad
+    path: charts/kabul
+    repoURL: https://github.com/farshid-25/myhelm.git
+    targetRevision: master
   syncPolicy:
     syncOptions:
       - CreateNamespace=true

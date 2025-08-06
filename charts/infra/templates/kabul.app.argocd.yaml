@@ -1,11 +1,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kabul
+  name: kabul-b
   namespace: argocd
 spec:
   destination:
-    namespace: team-a
+    namespace: team-b
     server: https://kubernetes.default.svc
   project: default
   source:
