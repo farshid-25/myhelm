@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myhelm
+  name: {{ .Chart.Name }}-deployment
   labels:
     kir: kos
 spec:

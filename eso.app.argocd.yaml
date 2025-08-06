@@ -1,0 +1,17 @@
+- apiVersion: argoproj.io/v1alpha1
+  kind: Application
+  metadata:
+    name: eso
+    namespace: argocd
+  spec:
+    destination:
+      namespace: external-secrets
+      server: https://kubernetes.default.svc
+    project: default
+    source:
+      path: charts/eso
+      repoURL: https://github.com/farshid-25/myhelm.git
+      targetRevision: master
+    syncPolicy:
+      syncOptions:
+        - CreateNamespace=true
