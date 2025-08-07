@@ -14,7 +14,7 @@ spec:
     targetRevision: master
     helm:
      values:
-      replicaCount: 4
+      replicaCount: "4"
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
