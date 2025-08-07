@@ -12,9 +12,9 @@ spec:
     path: charts/kabul
     repoURL: https://github.com/farshid-25/myhelm.git
     targetRevision: master
-    helm:
-     values: |
-      replicaCount: 9
+    # helm:
+    #  values: |
+    #   kabul.replicaCount: 9
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
