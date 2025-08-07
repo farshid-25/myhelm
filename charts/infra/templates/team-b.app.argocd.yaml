@@ -15,7 +15,7 @@ spec:
 
     helm:
       valueFiles: 
-        - ../team-b.values.yaml 
+        - /charts/infra/team-b.values.yaml 
 
   syncPolicy:
     syncOptions:
