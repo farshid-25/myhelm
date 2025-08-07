@@ -7,7 +7,7 @@ spec:
   destination:
     namespace: team-a
     server: https://kubernetes.default.svc
-  project: team-a
+  project:   team-a
   source:
     path: charts/team-a
     repoURL: https://github.com/farshid-25/myhelm.git
