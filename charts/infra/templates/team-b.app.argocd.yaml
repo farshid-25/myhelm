@@ -22,7 +22,7 @@ spec:
   destination:
     namespace: team-b
     server: https://kubernetes.default.svc
-  project: default
+  project: team-b
   source:
     path: charts/team-b
     repoURL: https://github.com/farshid-25/myhelm.git
