@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: kabul-b
-  namespace: team-b
+  namespace: 
 spec:
   destination:
     namespace: team-b
