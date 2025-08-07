@@ -7,7 +7,7 @@ spec:
   destination:
     namespace: argocd
     server: https://kubernetes.default.svc
-  project: default
+  project: ""
   source:
     path: charts/infra
     repoURL: https://github.com/farshid-25/myhelm.git
