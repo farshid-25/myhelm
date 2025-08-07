@@ -15,8 +15,8 @@ spec:
 
     helm:
       valueFiles: 
-        - team-b.app.argocd.yaml
-        
+        - team-b.values.yaml 
+
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
