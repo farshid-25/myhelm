@@ -15,7 +15,7 @@ spec:
 
     helm:
       valueFiles: 
-        - team-b.values.yaml 
+        - ../team-b.values.yaml 
 
   syncPolicy:
     syncOptions:
