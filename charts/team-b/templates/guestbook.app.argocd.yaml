@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: guestbook-b
-  namespace: argocd
+  namespace: 
 spec:
   destination:
     namespace: team-b
