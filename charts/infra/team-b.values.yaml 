@@ -1,5 +1,0 @@
-kabul:
-    resplicaCount: 5
-guestbook:
-    replicaCount: 3
-    name: testttttt

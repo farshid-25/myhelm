@@ -12,11 +12,6 @@ spec:
     path: helm-guestbook 
     repoURL: https://github.com/argoproj/argocd-example-apps.git  
     targetRevision: master 
-    helm: 
-      values: |
-        guestbook.replicaCount: 3
-        guestbook.name: testtttttttt
-        
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
