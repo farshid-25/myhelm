@@ -14,7 +14,7 @@ spec:
     targetRevision: master
     helm:
       releaseName: prometheus
-      skipTLS: true   # <-- skip certificate verification
+      skipTLSVerify: true   # <-- skip certificate verification
       values: |
         server:
           persistentVolume:
