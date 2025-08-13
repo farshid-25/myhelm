@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    namespace: prometheus
+    namespace: argocd
     server: https://kubernetes.default.svc
   project: infra
   source:
@@ -15,21 +15,10 @@ spec:
     helm:
       releaseName: prometheus
       values: |
-        alertmanager:
-          persistentVolume:
-            enabled: true
-            storageClass: standard
         server:
           persistentVolume:
             enabled: true
-            storageClass: standard
-          resources:
-            requests:
-              cpu: 100m
-              memory: 256Mi
-            limits:
-              cpu: 200m
-              memory: 2Gi
+            existingClaim: prometheus-server-pvc
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
