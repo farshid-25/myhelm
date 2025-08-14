@@ -30,6 +30,11 @@ spec:
           service:
             type: NodePort
             nodePort: 32001
+
+        installCRDs: true
+            
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
+
+    
