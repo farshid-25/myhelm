@@ -15,11 +15,11 @@ spec:
     helm:
       releaseName: prometheus
       skipTLSVerify: true   # <-- skip certificate verification
-      values: |
-        server:
-          persistentVolume:
-            enabled: true
-            existingClaim: prometheus-server-pvc
+      # values: |
+      #   server:
+      #     persistentVolume:
+      #       enabled: true
+      #       existingClaim: prometheus-server-pvc
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
