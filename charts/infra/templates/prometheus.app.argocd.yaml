@@ -30,3 +30,6 @@ spec:
           service:
             type: NodePort
             nodePort: 32001
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
