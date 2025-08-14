@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kind-prometheus
+  name: k-prom
   namespace: argocd
 spec:
   destination:
